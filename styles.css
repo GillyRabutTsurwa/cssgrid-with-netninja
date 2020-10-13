@@ -1,0 +1,29 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#content {
+    /* NEW: Grid setup */
+    /* NOTE: Tu en sais tout. Mais tu peux y revenir et jouer  */
+    display:grid;
+    /* grid-template-columns:repeat(3, 1fr); */
+    grid-template-columns: 1fr 2fr 1fr;
+
+    max-width: 96rem;
+    margin: 0 auto;
+}
+
+#content div {
+    background-color: #3bbced;
+    padding: 3rem;
+}
+
+#content div:nth-child(even) {
+    background-color: salmon;
+}
