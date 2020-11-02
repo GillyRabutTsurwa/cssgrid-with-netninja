@@ -1,29 +1,36 @@
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 #content {
-    /* NEW: Grid setup */
-    /* NOTE: Tu en sais tout. Mais tu peux y revenir et jouer  */
-    display:grid;
-    /* grid-template-columns:repeat(3, 1fr); */
-    grid-template-columns: 1fr 2fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* NOTE: On s'aborde pas à grid-template-rows. C'est grid-auto-rows tout d'adord */
+  /* NEW: Specifies the size of implicitly created rows. */
+  /* NEW: He also introduces the minmax() */
+  grid-auto-rows: minmax(2rem, auto);
 
-    max-width: 96rem;
-    margin: 0 auto;
+  /* Lorsque l'on utilise grid-template-rows. On n'a pas besoin de grid-auto-rows. Je doute qu'on les utilise à la fois */
+  /* grid-template-rows c'est plus rare que grid-template-columns. */
+  grid-template-rows: repeat(3, minmax(2rem, auto));
+  /* NEW: introduces gap. */
+  gap: 3rem;
+
+  max-width: 96rem;
+  margin: 0 auto;
 }
 
 #content div {
-    background-color: #3bbced;
-    padding: 3rem;
+  background-color: #3bbced;
+  padding: 3rem;
 }
 
 #content div:nth-child(even) {
-    background-color: salmon;
+  background-color: salmon;
 }
