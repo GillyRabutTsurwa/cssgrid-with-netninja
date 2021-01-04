@@ -10,16 +10,8 @@ body {
 
 #content {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  /* NOTE: On s'aborde pas à grid-template-rows. C'est grid-auto-rows tout d'adord */
-  /* NEW: Specifies the size of implicitly created rows. */
-  /* NEW: He also introduces the minmax() */
-  grid-auto-rows: minmax(2rem, auto);
-
-  /* Lorsque l'on utilise grid-template-rows. On n'a pas besoin de grid-auto-rows. Je doute qu'on les utilise à la fois */
-  /* grid-template-rows c'est plus rare que grid-template-columns. */
-  grid-template-rows: repeat(3, minmax(2rem, auto));
-  /* NEW: introduces gap. */
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, minmax(15rem, auto));
   gap: 3rem;
 
   max-width: 96rem;
@@ -27,10 +19,53 @@ body {
 }
 
 #content div {
-  background-color: #3bbced;
   padding: 3rem;
+  color: #fff;
+  font-size: 3.75rem;
+
+  /* Le cod dessous sert a centraliser le texte des chiffres */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#content div:nth-child(odd) {
+  background-color: #3bbced;
 }
 
 #content div:nth-child(even) {
   background-color: salmon;
+}
+
+.un {
+  grid-column: 1 / 3;
+}
+
+.deux {
+  grid-column: 3 / 7;
+}
+
+.trois {
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+}
+
+.nne {
+  grid-column: 4 / -1;
+  grid-row: 2 / 4;
+}
+
+.tano {
+  grid-column: 3 / -1;
+}
+
+.six {
+  grid-column: 1 / 3;
+  grid-row: 4 / -1;
 }
