@@ -8,13 +8,27 @@ body {
   text-align: center;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 #content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-
+  grid-auto-rows: minmax(15rem, auto);
+  grid-gap: 1.5rem;
   max-width: 96rem;
   margin: 0 auto;
+
+  /* NOTE: relevant code */
+  /* NOTE: align take the height of the content inside it, padding included. Bonne information à savoir, car ma question était: à quelle hauteur est-ce qu'on sait ajuster notre élément ? */
+  /* NOTE: valeurs de align-items: end, stretch. stretch est le defaut */
+  /* NOTE: valeurs de justify-items: end, center. ? est le defaut */
+  /* NOTE: align-items: en-haut et en-bas */
+  /* NOTE: justify-content: gauche et droite */
+  /* quand on ajuste ces proprietaires ici, on le fait pour tous les elements. Mais on peut le faire pour chaque element individuellement */
 }
 
 #content div {
@@ -33,26 +47,28 @@ body {
   align-items: center; */
 }
 
+.un {
+  justify-self: end;
+  -ms-flex-item-align: end;
+  align-self: end;
+}
+
+.deux {
+  justify-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.trois {
+  justify-self: start;
+  -ms-flex-item-align: start;
+  align-self: start;
+}
+
 #content div:nth-child(odd) {
   background-color: #3bbced;
 }
 
 #content div:nth-child(even) {
   background-color: salmon;
-}
-
-/* Relevant code */
-.nested {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  /* NOTE: Ninja also introduces the span keyword */
-  grid-column: 1 / span 3;
-  /* we can also just put "span 3". this will start at the default start position */
-}
-
-.nested p {
-  border: 1px solid #fff;
-  padding: 2rem;
-  margin: 0;
 }
