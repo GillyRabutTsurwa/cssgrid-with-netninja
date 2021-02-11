@@ -10,8 +10,7 @@ body {
 
 #content {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, minmax(15rem, auto));
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 
   max-width: 96rem;
@@ -23,8 +22,7 @@ body {
   color: #fff;
   font-size: 3.75rem;
 
-  /* Le cod dessous sert a centraliser le texte des chiffres */
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
@@ -32,7 +30,7 @@ body {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #content div:nth-child(odd) {
@@ -43,29 +41,18 @@ body {
   background-color: salmon;
 }
 
-.un {
-  grid-column: 1 / 3;
+/* Relevant code */
+.nested {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  /* NOTE: Ninja also introduces the span keyword */
+  grid-column: 1 / span 3;
+  /* we can also just put "span 3". this will start at the default start position */
 }
 
-.deux {
-  grid-column: 3 / 7;
-}
-
-.trois {
-  grid-column: 1 / 4;
-  grid-row: 2 / 4;
-}
-
-.nne {
-  grid-column: 4 / -1;
-  grid-row: 2 / 4;
-}
-
-.tano {
-  grid-column: 3 / -1;
-}
-
-.six {
-  grid-column: 1 / 3;
-  grid-row: 4 / -1;
+.nested p {
+  border: 1px solid #fff;
+  padding: 2rem;
+  margin: 0;
 }
