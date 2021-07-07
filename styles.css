@@ -1,9 +1,18 @@
+:root{
+  --taille-police-defaut: 62.5%;
+
+  --noir: #000;
+  --blanc: #FFF;
+  --bleu-celeste: #3bbced;
+  --saumon-rouge: #fa8072;
+}
+
 html {
-  font-size: 62.5%;
+  font-size: var(--taille-police-defaut);
 }
 
 body {
-  color: #000;
+  color: var(--noir);
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
@@ -21,54 +30,30 @@ body {
   grid-gap: 1.5rem;
   max-width: 96rem;
   margin: 0 auto;
-
-  /* NOTE: relevant code */
-  /* NOTE: align take the height of the content inside it, padding included. Bonne information à savoir, car ma question était: à quelle hauteur est-ce qu'on sait ajuster notre élément ? */
-  /* NOTE: valeurs de align-items: end, stretch. stretch est le defaut */
-  /* NOTE: valeurs de justify-items: end, center. ? est le defaut */
-  /* NOTE: align-items: en-haut et en-bas */
-  /* NOTE: justify-content: gauche et droite */
-  /* quand on ajuste ces proprietaires ici, on le fait pour tous les elements. Mais on peut le faire pour chaque element individuellement */
 }
 
 #content div {
   padding: 3rem;
-  color: #fff;
+  color: var(--blanc);
   font-size: 3.75rem;
-
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; */
 }
 
 .un {
-  justify-self: end;
-  -ms-flex-item-align: end;
-  align-self: end;
+  place-self: end;
 }
 
 .deux {
-  justify-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
+  place-self: center;
 }
 
 .trois {
-  justify-self: start;
-  -ms-flex-item-align: start;
-  align-self: start;
+  place-self: start;
 }
 
 #content div:nth-child(odd) {
-  background-color: #3bbced;
+  background-color: var(--bleu-celeste);
 }
 
 #content div:nth-child(even) {
-  background-color: salmon;
+  background-color: var(--saumon-rouge);
 }
