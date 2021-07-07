@@ -1,3 +1,4 @@
-grid lines help us place elements in a grid. we can do this by specifying position of column and row direction. we can change order, put stuff all over the gaff, etc.
-
-we practised using grid-column and grid-row pour positioner les elements de notre grid là où on désire.
+## Aligning & Justifying Items
+- learnt how to align and justify items in a grid container both collectively (in the grid parent declaration) using align-items and justify-items
+- also learnt how to do this individually, per grid item, using align-self & justify-self
+- align-items is used for vertical alignment whereas justify is used for horizontal alignment
